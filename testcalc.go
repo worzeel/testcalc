@@ -11,6 +11,16 @@ func Add(numbers ...int) int {
 }
 
 // Subtract numbers
-func Subtract(numbers ...int) {
-	//
+func Subtract(numbers ...int) int {
+	result := 0
+
+	for i, num := range numbers {
+		if i == 0 {
+			result = num
+		} else {
+			result -= num
+		}
+	}
+
+	return result
 }

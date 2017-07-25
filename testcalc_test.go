@@ -7,7 +7,6 @@ import (
 )
 
 func TestIShouldBeAbleToCallAddToObtainKnownValues(t *testing.T) {
-
 	for _, theTests := range []struct {
 		numbers       []int
 		expectedValue int
@@ -24,6 +23,19 @@ func TestIShouldBeAbleToCallAddToObtainKnownValues(t *testing.T) {
 	}
 }
 
-func TestIShouldBeAbleToCallSubtractPassingInMultipleValues(t *testing.T) {
-	testcalc.Subtract(1, 2)
+func TestIShouldBeAbleToCallSubtractPassingInNumbersAndGetAValidResult(t *testing.T) {
+	for _, theTests := range []struct {
+		numbers       []int
+		expectedValue int
+	}{
+		{[]int{1, 2}, -1},
+		{[]int{3, 2, 1}, 0},
+		{[]int{10, 5, 2}, 3},
+	} {
+		val := testcalc.Subtract(theTests.numbers...)
+
+		if val != theTests.expectedValue {
+			t.Errorf("Value should be %d but was %d", theTests.expectedValue, val)
+		}
+	}
 }
