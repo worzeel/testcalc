@@ -9,3 +9,8 @@ func Add(numbers ...int) int {
 
 	return result
 }
+
+// Subtract numbers
+func Subtract(numbers ...int) {
+	//
+}

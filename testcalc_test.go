@@ -23,3 +23,7 @@ func TestIShouldBeAbleToCallAddToObtainKnownValues(t *testing.T) {
 		}
 	}
 }
+
+func TestIShouldBeAbleToCallSubtractPassingInMultipleValues(t *testing.T) {
+	testcalc.Subtract(1, 2)
+}
