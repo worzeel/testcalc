@@ -23,7 +23,7 @@ func TestIShouldBeAbleToCallAddToObtainKnownValues(t *testing.T) {
 	}
 }
 
-func TestIShouldBeAbleToCallSubtractPassingInNumbersAndGetAValidResult(t *testing.T) {
+func TestIShouldBeAbleToCallSubtractToObtainKnownValues(t *testing.T) {
 	for _, theTests := range []struct {
 		numbers       []int
 		expectedValue int
@@ -38,4 +38,12 @@ func TestIShouldBeAbleToCallSubtractPassingInNumbersAndGetAValidResult(t *testin
 			t.Errorf("Value should be %d but was %d", theTests.expectedValue, val)
 		}
 	}
+}
+
+func TestIShouldBeAbleToCallMultiplyPassingInMultipleValues(t *testing.T) {
+	testcalc.Multiply(1, 2)
+}
+
+func TestIShouldBeAbleToCallMultiplyPassingInValuesAndGetAKnownResult(t *testing.T) {
+	//
 }

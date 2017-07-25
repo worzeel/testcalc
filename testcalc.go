@@ -24,3 +24,8 @@ func Subtract(numbers ...int) int {
 
 	return result
 }
+
+// Multiply numbers
+func Multiply(numbers ...int) {
+	//
+}
