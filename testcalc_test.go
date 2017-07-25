@@ -6,11 +6,6 @@ import (
 	"github.com/worzeel/testcalc"
 )
 
-func TestIShouldBeAbleToCallAddPassingInDifferentAmountOfValues(t *testing.T) {
-	testcalc.Add(1, 2)
-	testcalc.Add(1, 2, 3)
-}
-
 func TestIShouldBeAbleToCallAddToObtainKnownValues(t *testing.T) {
 
 	for _, theTests := range []struct {
