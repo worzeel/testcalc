@@ -12,7 +12,7 @@ func Add(numbers ...int) int {
 
 // Subtract numbers
 func Subtract(numbers ...int) int {
-	result := 0
+	var result int
 
 	for i, num := range numbers {
 		if i == 0 {
@@ -26,6 +26,16 @@ func Subtract(numbers ...int) int {
 }
 
 // Multiply numbers
-func Multiply(numbers ...int) {
-	//
+func Multiply(numbers ...int) int {
+	var result int
+
+	for i, num := range numbers {
+		if i == 0 {
+			result = num
+		} else {
+			result *= num
+		}
+	}
+
+	return result
 }

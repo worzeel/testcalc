@@ -40,10 +40,19 @@ func TestIShouldBeAbleToCallSubtractToObtainKnownValues(t *testing.T) {
 	}
 }
 
-func TestIShouldBeAbleToCallMultiplyPassingInMultipleValues(t *testing.T) {
-	testcalc.Multiply(1, 2)
-}
+func TestIShouldBeAbleToCallMultiplyToObtainKnownValues(t *testing.T) {
+	for _, theTests := range []struct {
+		numbers       []int
+		expectedValue int
+	}{
+		{[]int{1, 2}, 2},
+		{[]int{3, 2, 1}, 6},
+		{[]int{10, 5, 2}, 100},
+	} {
+		val := testcalc.Multiply(theTests.numbers...)
 
-func TestIShouldBeAbleToCallMultiplyPassingInValuesAndGetAKnownResult(t *testing.T) {
-	//
+		if val != theTests.expectedValue {
+			t.Errorf("Value should be %d but was %d", theTests.expectedValue, val)
+		}
+	}
 }
